@@ -5,9 +5,9 @@ import streamlit as st
 
 st.title("Hello world!")
 
-# df = pd.read_csv('Data/cc_rfm.csv')
-# st.dataframe(df)
-# st.write(df)
+df = pd.read_csv('Data/cc_rfm.csv')
+st.dataframe(df)
+st.write(df)
 
 # # Add some matplotlib code !
 # fig, ax = plt.subplots()
