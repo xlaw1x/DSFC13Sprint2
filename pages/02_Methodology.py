@@ -12,7 +12,7 @@ st.dataframe(df)
 fig, ax = plt.subplots()
 df.hist(
   bins=8,
-  column="Age",
+  column="recency",
   grid=False,
   figsize=(8, 8),
   color="#86bf91",
