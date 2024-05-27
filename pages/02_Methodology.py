@@ -5,7 +5,7 @@ import streamlit as st
 
 st.title("Hello world!")
 
-df = pd.read_csv('Data/cc_rfm.csv')
+df = pd.read_csv('data/cc_rfm.csv')
 st.dataframe(df)
 st.write(df)
 
