@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import streamlit as st
 
 st.title("Hello world!")
 
-df = pd.read_csv(Data/cc_rfm.csv)
+df = pd.read_csv('Data/cc_rfm.csv')
+st.dataframe(df)
 st.write(df)
 
 # # Add some matplotlib code !
