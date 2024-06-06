@@ -3,14 +3,13 @@ python
 streamlit
 numpy
 pandas
-tqdm
+#tqdm
 # from collections import Counter
 # warnings.filterwarnings("ignore") #if you don't want to show the warnings
 
 # visualization
 seaborn
 matplotlib
-matplotlib.pyplot
 #from wordcloud import WordCloud
 #from nltk.corpus import stopwords
 #import nltk
