@@ -221,7 +221,7 @@ if __name__ == '__main__':
 # ACCIDENTS PER DAY OF THE WEEK
 # Maps integer value to string value of trans_weekday
 weekday_map = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
-df['trans_weekday'] = df['trans_weekday'].map(weekday_map)
+df['acc_weekday'] = df['acc_weekday'].map(weekday_map)
 
 # Function to plot bar chart
 def plot_bar_chart(df):
