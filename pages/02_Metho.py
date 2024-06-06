@@ -216,3 +216,40 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+#Accidents per Day of the Week
+# Maps integer value to string value of trans_weekday
+weekday_map = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
+df['trans_weekday'] = df['trans_weekday'].map(weekday_map)
+
+# Function to plot bar chart
+def plot_bar_chart(df):
+    weekday_counts = df['trans_weekday'].value_counts()
+
+    colors_mc = ['lightgray'] * len(weekday_counts)
+    colors_mc[:3] = ['#1D2371'] * 3  # Change color for top 3 weekdays
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    weekday_counts.plot(kind='bar', color=colors_mc, ax=ax)
+
+    # Customizing the plot
+    ax.set_xlabel('Day of the week')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Day of the week')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    # ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents by Day of the Week')
+    st.write('This app visualizes the number of accidents by day of the week.')
+
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
