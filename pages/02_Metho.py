@@ -47,6 +47,7 @@ if __name__ == '__main__':
     main()
 
 
+
 # TOP CITIES WHERE ACCIDENTS OCCUR
 # Function to plot bar chart
 def plot_bar_chart(df):
@@ -82,6 +83,7 @@ if __name__ == '__main__':
     main()
 
 
+
 # TOP LOCATIONS WHERE ACCIDENTS OCCUR
 # Function to plot bar chart
 def plot_bar_chart(df):
@@ -108,10 +110,6 @@ def plot_bar_chart(df):
 def main():
     st.title('Top Accident Locations')
     st.write('This app visualizes the top locations where accidents occur.')
-
-    # Display the DataFrame
-    st.write('Data:')
-    st.write(df)
 
     # Plot the bar chart
     st.write('Bar Chart:')
@@ -147,9 +145,37 @@ def main():
     st.title('Accidents by Direction')
     st.write('This app visualizes the number of accidents by direction.')
 
-    # Display the DataFrame
-    st.write('Data:')
-    st.write(df)
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
+
+
+# Function to plot bar chart
+def plot_bar_chart(df):
+    part_of_day_counts = df['part_of_day'].value_counts().sort_values(ascending=False)
+
+    colors = ['lightgray'] * 5  # Default color for all parts of the day
+    colors[:1] = ['#1D2371'] * 1  # Change color for morning
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    part_of_day_counts.plot(kind='bar', color=colors, ax=ax)
+
+    # Customizing the plot
+    ax.set_xlabel('Time of Day')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Time of Day')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents by Time of Day')
+    st.write('This app visualizes the number of accidents by time of day.')
 
     # Plot the bar chart
     st.write('Bar Chart:')
