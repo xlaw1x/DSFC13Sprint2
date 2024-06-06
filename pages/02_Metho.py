@@ -189,7 +189,7 @@ if __name__ == '__main__':
 #ACCIDENTS THROUGHOUT THE DAY
 # Function to plot line chart
 def plot_line_chart(df):
-    hour_counts = df['trans_hour'].value_counts().sort_index()
+    hour_counts = df['acc_hour'].value_counts().sort_index()
 
     fig, ax = plt.subplots(figsize=(12, 6))
     hour_counts.plot(kind='line', color='#1D2371', marker='o', ax=ax)  # Use #1D2371 as line color
