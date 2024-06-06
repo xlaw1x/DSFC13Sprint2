@@ -74,10 +74,6 @@ def main():
     st.title('Accidents Occurrence by City')
     st.write('This app visualizes the top cities where accidents occur.')
 
-    # Display the DataFrame
-    st.write('Data:')
-    st.write(df)
-
     # Plot the bar chart
     st.write('Bar Chart:')
     plot_bar_chart(df)
