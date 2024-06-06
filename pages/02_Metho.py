@@ -22,7 +22,7 @@ def plot_graph(data):
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.countplot(x=data['Class'],
                   order=data['Class'].value_counts().index,
-                  color='blue')
+                  color='#1D2371')
     plt.xlabel(' ')
     plt.ylabel(' ')
     for spine in ['right', 'top']:
