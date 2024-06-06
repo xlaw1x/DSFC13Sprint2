@@ -9,6 +9,10 @@ import seaborn as sns
 
 st.title("Exploratory Data Analysis")
 
+
+st.subheader("In this section we will explore the")
+
+
 df = pd.read_csv('data/involved_data_final.csv')
 # st.dataframe(df)
 
