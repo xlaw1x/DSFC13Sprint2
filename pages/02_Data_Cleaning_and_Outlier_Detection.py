@@ -20,7 +20,7 @@ def main():
     self_accident_quant = df[numerical_cols]
 
     # Set Seaborn style and color palette
-    sns.set_style("whitegrid")
+    #sns.set_style("whitegrid")
     sns.set_palette(["#7ABAFF", "#1D2371"])
 
 
@@ -34,7 +34,7 @@ def main():
     ax[0].set_title('Distribution of Latitude')
 
     # Distribution of Longitude
-    sns.histplot(self_accident_quant["Longitude"], ax=ax[1])  # Light blue histogram
+    sns.histplot(self_accident_quant["Longitude"], ax=ax[1], kde=True)  # Light blue histogram
     #sns.kdeplot(self_accident_quant["Longitude"], ax=ax[1], color="#1D2371", linewidth=2)  # Dark blue KDE curve
     ax[1].set_title('Distribution of Longitude')
 
