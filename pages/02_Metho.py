@@ -9,7 +9,7 @@ import seaborn as sn
 
 st.title("Hello world YAY!")
 
-df = pd.read_csv('data/involved_data_final.csv')
+df = pd.read_csv('data/cc_rfm.csv')
 #st.dataframe(df)
 
 Add some matplotlib code !
