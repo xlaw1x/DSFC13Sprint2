@@ -10,7 +10,7 @@ st.write("Here you can put each of your key results.")
 
 df = pd.read_csv('data/involved_data_final.csv')
 
-# Streamlit app
+# LATITUDE & LONGITUDE
 def main():
     st.title('Distribution of Latitude and Longitude')
     st.write('This app visualizes the distribution of latitude and longitude.')
@@ -29,13 +29,11 @@ def main():
     fig.suptitle('Distribution', fontsize=16)
 
     # Distribution of Latitude
-    sns.histplot(self_accident_quant["Latitude"], ax=ax[0], kde=True)  # Light blue histogram
-    #sns.kdeplot(self_accident_quant["Latitude"], ax=ax[0], color="#1D2371", linewidth=2)  # Dark blue KDE curve
+    sns.histplot(self_accident_quant["Latitude"], ax=ax[0], kde=True)
     ax[0].set_title('Distribution of Latitude')
 
     # Distribution of Longitude
-    sns.histplot(self_accident_quant["Longitude"], ax=ax[1], kde=True)  # Light blue histogram
-    #sns.kdeplot(self_accident_quant["Longitude"], ax=ax[1], color="#1D2371", linewidth=2)  # Dark blue KDE curve
+    sns.histplot(self_accident_quant["Longitude"], ax=ax[1], kde=True)
     ax[1].set_title('Distribution of Longitude')
 
     # Show the plot
@@ -43,3 +41,19 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+def main():
+    st.title('Outlier Detection for Latitude')
+    st.write('This app detects outliers in the Latitude column.')
+
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df)
+
+    # Outlier detection
+    z_scores = stats.zscore(df['Latitude'])
+    df['lat_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['lat_zscore'] > 3]
