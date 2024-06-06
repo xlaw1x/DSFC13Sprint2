@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-st.title("Hello world!")
+st.title("Hello world YAY!")
 
 df = pd.read_csv('data/cc_rfm.csv')
 st.dataframe(df)
