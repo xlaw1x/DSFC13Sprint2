@@ -10,36 +10,36 @@ import seaborn as sns
 st.title("Hello world YAY!")
 
 df = pd.read_csv('data/involved_data_final.csv')
-#st.dataframe(df)
+st.dataframe(df)
 
-fraud_map = {0: 'is_not_self_accident', 1: 'self_accident'}
-df['Class'] = df['is_self_accident'].map(fraud_map)
+# fraud_map = {0: 'is_not_self_accident', 1: 'self_accident'}
+# df['Class'] = df['is_self_accident'].map(fraud_map)
 
-# Plotting function
-def plot_graph(data):
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.countplot(x=data['Class'],
-                  order=data['Class'].value_counts().index,
-                  color='skyblue')
-    plt.xlabel(' ')
-    plt.ylabel(' ')
-    for spine in ['right', 'top']:
-        ax.spines[spine].set_visible(False)
-    plt.title('Distribution of Vehicular Accidents in Metro Manila', size=15, y=1)
-    st.pyplot(fig)
+# # Plotting function
+# def plot_graph(data):
+#     fig, ax = plt.subplots(figsize=(8, 6))
+#     sns.countplot(x=data['Class'],
+#                   order=data['Class'].value_counts().index,
+#                   color='skyblue')
+#     plt.xlabel(' ')
+#     plt.ylabel(' ')
+#     for spine in ['right', 'top']:
+#         ax.spines[spine].set_visible(False)
+#     plt.title('Distribution of Vehicular Accidents in Metro Manila', size=15, y=1)
+#     st.pyplot(fig)
 
-# Streamlit app
-def main():
-    st.title('Vehicular Accidents in Metro Manila')
-    st.write('This app visualizes the distribution of vehicular accidents.')
+# # Streamlit app
+# def main():
+#     st.title('Vehicular Accidents in Metro Manila')
+#     st.write('This app visualizes the distribution of vehicular accidents.')
 
-    # Display the DataFrame
-    st.write('Data:')
-    st.write(df['Class'].value_counts())
+#     # Display the DataFrame
+#     st.write('Data:')
+#     st.write(df['Class'].value_counts())
 
-    # Plot the graph
-    st.write('Graph:')
-    plot_graph(df)
+#     # Plot the graph
+#     st.write('Graph:')
+#     plot_graph(df)
 
 # # Add some matplotlib code !
 # fig, ax = plt.subplots()
