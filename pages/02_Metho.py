@@ -37,5 +37,5 @@ for spine in ['right', 'top']:
     ax.spines[spine].set_visible(False)
 ax.set_title(f'Distribution of Vehicular Accidents in Metro Manila', size=15, y=1)
 display(numerical_df_eda['Class'].value_counts())
-#plt.show()
-st.write(fig)
+plt.show()
+#st.write(fig)
