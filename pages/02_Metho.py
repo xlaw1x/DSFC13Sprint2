@@ -153,6 +153,7 @@ if __name__ == '__main__':
     main()
 
 
+#ACCIDENTS PER TIME OF DAY
 # Function to plot bar chart
 def plot_bar_chart(df):
     part_of_day_counts = df['part_of_day'].value_counts().sort_values(ascending=False)
@@ -180,6 +181,38 @@ def main():
     # Plot the bar chart
     st.write('Bar Chart:')
     plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
+
+
+#ACCIDENTS THROUGHOUT THE DAY
+# Function to plot line chart
+def plot_line_chart(df):
+    hour_counts = df['trans_hour'].value_counts().sort_index()
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    hour_counts.plot(kind='line', color='#1D2371', marker='o', ax=ax)  # Use #1D2371 as line color
+
+    # Customizing the plot
+    ax.set_xlabel('Hour of the Day')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Hour of the Day')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticks(hour_counts.index)  # Set the tick positions to match the hour values
+    ax.set_xticklabels(hour_counts.index)  # Set the tick labels to display the hour values
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents by Hour of the Day')
+    st.write('This app visualizes the number of accidents by hour of the day.')
+
+    # Plot the line chart
+    st.write('Line Chart:')
+    plot_line_chart(df)
 
 if __name__ == '__main__':
     main()
