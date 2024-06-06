@@ -1,8 +1,14 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import scipy.stats as stats
 
 st.title("Data Cleaning, Preprocessing, and Outlier Detection")
 st.write("Here you can put each of your key results.")
 
+df = pd.read_csv('data/involved_data_final.csv')
 
 # Streamlit app
 def main():
