@@ -10,7 +10,7 @@ import seaborn as sns
 st.title("Hello world YAY!")
 
 df = pd.read_csv('data/involved_data_final.csv')
-st.dataframe(df)
+# st.dataframe(df)
 
 fraud_map = {0: 'is_not_self_accident', 1: 'self_accident'}
 df['Class'] = df['is_self_accident'].map(fraud_map)
