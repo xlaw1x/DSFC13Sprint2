@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import seaborn as sn
-from wordcloud import WordCloud
-from nltk.corpus import stopwords
-import nltk
+# from wordcloud import WordCloud
+# from nltk.corpus import stopwords
+# import nltk
 
 st.title("Hello world YAY!")
 
@@ -16,7 +16,7 @@ Add some matplotlib code !
 fig, ax = plt.subplots()
 df.hist(
   bins=8,
-  column="recency",
+  column="Type",
   grid=False,
   figsize=(8, 8),
   color="#86bf91",
