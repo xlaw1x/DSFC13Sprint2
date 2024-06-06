@@ -326,3 +326,39 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+# Calculate accidents per month per year
+accidents_per_month_year = df.groupby(['acc_year', 'acc_month']).size().unstack(fill_value=0)
+
+# Define colors for each year
+colors = ['#1f77b4', '#2ca02c', '#4B0082']  # Shades of blue
+
+# Streamlit app
+def main():
+    st.title('Accidents by Month for Different Years')
+    st.write('This app visualizes the number of accidents by month for different years.')
+
+    # Plotting the data
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Plotting the line graph for each year
+    for year, color in zip(accidents_per_month_year.index, colors):
+        ax.plot(accidents_per_month_year.columns, accidents_per_month_year.loc[year], marker='o', label=year, color=color)
+
+    # Customizing the plot
+    ax.set_xlabel('Month')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Month for Different Years')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticks(accidents_per_month_year.columns)
+    ax.set_xticklabels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], rotation=0)
+
+    plt.legend(title='Year')
+    plt.grid(True)
+    st.pyplot(fig)
+
+if __name__ == '__main__':
+    main()
