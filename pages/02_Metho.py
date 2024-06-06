@@ -54,10 +54,10 @@ def plot_bar_chart(df):
     df_sorted = df[df['City'].isin(top_cities.index)]
 
   # Create color list
-    colors = ['#1D2371'] * len(top_cities)  # Changed color to #1D2371
+    colors = ['lightgray'] * len(top_cities)  # Changed color to #1D2371
     for idx, city in enumerate(top_cities.index):
         if city in top_cities.index[:3]:
-            colors[idx] = 'skyblue'
+            colors[idx] = '#1D2371'
 
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.barh(top_cities.index, top_cities.values, color=colors)
