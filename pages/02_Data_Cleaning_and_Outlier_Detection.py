@@ -44,23 +44,19 @@ if __name__ == '__main__':
 
 # Streamlit app
 def main():
-    st.title('Outlier Detection for Latitude and Longitude')
-    st.write('This app detects outliers in the Latitude and Longitude columns.')
+    st.title('Outlier Detection for Latitude')
+    st.write('This app detects outliers in the Latitude column.')
 
     # Display the DataFrame
     st.write('Data:')
     st.write(df)
 
-    # Extract Latitude and Longitude columns
-    lat_lon_df = df[['Latitude', 'Longitude']]
-
     # Outlier detection
-    z_scores = stats.zscore(lat_lon_df)
-    lat_lon_df['lat_zscore'] = abs(z_scores[:, 0])  # Z-scores for Latitude
-    lat_lon_df['lon_zscore'] = abs(z_scores[:, 1])  # Z-scores for Longitude
+    z_scores = stats.zscore(df['Latitude'])
+    df['lat_zscore'] = abs(z_scores)
 
     # Filter outliers
-    outliers = lat_lon_df[(lat_lon_df['lat_zscore'] > 3) | (lat_lon_df['lon_zscore'] > 3)]
+    outliers = df[df['lat_zscore'] > 3]
 
     # Display outliers
     if not outliers.empty:
