@@ -10,7 +10,7 @@ st.write("Here you can put each of your key results.")
 
 df = pd.read_csv('data/involved_data_final.csv')
 
-# LATITUDE & LONGITUDE
+# LATITUDE OUTLIERS
 def main():
     st.title('Distribution of Latitude and Longitude')
     st.write('This app visualizes the distribution of latitude and longitude.')
@@ -42,7 +42,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-# Streamlit app
+# LATITUDE
 def main():
     st.title('Outlier Detection for Latitude')
     st.write('This app detects outliers in the Latitude column.')
@@ -60,6 +60,30 @@ def main():
         st.write(outliers['Latitude'])
     else:
         st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
+
+#LONGITUDE
+# Streamlit app for outlier detection for Longitude
+def main():
+    st.title('Outlier Detection for Longitude')
+    st.write('This app detects outliers in the Longitude column.')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['Longitude'])
+    df['lon_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['lon_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Outliers Detected in Longitude:')
+        st.write(outliers['Longitude'])
+    else:
+        st.write('No outliers detected in Longitude.')
 
 if __name__ == '__main__':
     main()
