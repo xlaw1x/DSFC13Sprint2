@@ -32,7 +32,7 @@ def plot_graph(data):
 
 # Streamlit app
 def main():
-    st.title('Vehicular Accidents in Metro Manila')
+    st.header('Vehicular Accidents in Metro Manila')
     st.write('This app visualizes the distribution of vehicular accidents.')
 
     # Display the DataFrame
@@ -71,7 +71,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents Occurrence by City')
+    st.header('Accidents Occurrence by City')
     st.write('This app visualizes the top cities where accidents occur.')
 
     # Plot the bar chart
