@@ -16,5 +16,5 @@ matplotlib
 #nltk.download('stopwords')
 
 # outlier detection
-#import scipy.stats as stats #automatic way of computing z-score
+scipy #automatic way of computing z-score
 #from sklearn.ensemble import IsolationForest
