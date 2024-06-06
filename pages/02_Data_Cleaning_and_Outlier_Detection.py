@@ -20,7 +20,7 @@ def main():
     self_accident_quant = df[numerical_cols]
 
     # Set Seaborn style and color palette
-    #sns.set_style("whitegrid")
+    sns.set_style("white")
     sns.set_palette(["#7ABAFF", "#1D2371"])
 
 
