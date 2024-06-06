@@ -218,14 +218,14 @@ if __name__ == '__main__':
     main()
 
 
-#Accidents per Day of the Week
+# ACCIDENTS PER DAY OF THE WEEK
 # Maps integer value to string value of trans_weekday
 weekday_map = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
 df['trans_weekday'] = df['trans_weekday'].map(weekday_map)
 
 # Function to plot bar chart
 def plot_bar_chart(df):
-    weekday_counts = df['trans_weekday'].value_counts()
+    weekday_counts = df['acc_weekday'].value_counts()
 
     colors_mc = ['lightgray'] * len(weekday_counts)
     colors_mc[:3] = ['#1D2371'] * 3  # Change color for top 3 weekdays
@@ -246,6 +246,39 @@ def plot_bar_chart(df):
 def main():
     st.title('Accidents by Day of the Week')
     st.write('This app visualizes the number of accidents by day of the week.')
+
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
+
+
+# ACCIDENTS PER MONTH
+# Function to plot bar chart
+def plot_bar_chart(df):
+    accidents_per_month = df['acc_month'].value_counts().sort_index()
+
+    colors = ['lightgray'] * 12  # Default color for all months
+    colors[8:11] = ['#1D2371'] * 3  # Change color for September, October, and November
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    accidents_per_month.plot(kind='bar', color=colors, ax=ax)
+
+    # Customizing the plot
+    ax.set_xlabel('Month')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Month')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticklabels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], rotation=0)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents by Month')
+    st.write('This app visualizes the number of accidents by month.')
 
     # Plot the bar chart
     st.write('Bar Chart:')
