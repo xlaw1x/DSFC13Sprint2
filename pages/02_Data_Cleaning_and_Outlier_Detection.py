@@ -42,10 +42,14 @@ def main():
 if __name__ == '__main__':
     main()
 
-#Find outliers
+# Streamlit app
 def main():
-    st.title('Outlier Detection for Latitude')
-    st.write('This app detects outliers in the Latitude column.')
+    st.title('Outlier Detection for Latitude and Longitude')
+    st.write('This app detects outliers in the Latitude and Longitude columns.')
+
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df)
 
     # Extract Latitude and Longitude columns
     lat_lon_df = df[['Latitude', 'Longitude']]
