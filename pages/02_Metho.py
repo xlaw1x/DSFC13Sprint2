@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import seaborn as sn
+import seaborn as sns
 # from wordcloud import WordCloud
 # from nltk.corpus import stopwords
 # import nltk
