@@ -1,5 +1,5 @@
 # general libraries
-python
+#python
 streamlit
 numpy
 pandas
