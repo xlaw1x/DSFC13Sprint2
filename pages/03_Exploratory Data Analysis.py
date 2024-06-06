@@ -75,6 +75,10 @@ def main():
     st.header('Accidents Occurrence by City')
     st.write('This app visualizes the top cities where accidents occur.')
 
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df['Class'].value_counts())
+    
     # Plot the bar chart
     st.write('Bar Chart:')
     plot_bar_chart(df)
