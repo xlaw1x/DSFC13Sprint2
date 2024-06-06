@@ -80,4 +80,34 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# ACCIDENTS PER DIRECTION
+# Function to plot bar chart
+def plot_bar_chart(df):
+    colors = ['lightgray'] * 5  # Default color for all directions
+    colors[:2] = ['#1D2371'] * 2  # Change color for NB and SB
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    df.plot(kind='bar', x='Direction', y='Number of Accidents', color=colors, ax=ax)
+
+    # Customizing the plot
+    ax.set_xlabel('Direction')
+    ax.set_ylabel('Number of Accidents')
+    ax.set_title('Number of Accidents by Direction')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents by Direction')
+    st.write('This app visualizes the number of accidents by direction.')
+
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
     
