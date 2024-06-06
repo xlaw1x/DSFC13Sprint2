@@ -293,7 +293,7 @@ if __name__ == '__main__':
 accidents_per_month_year = df.groupby(['acc_year', 'acc_month']).size().unstack(fill_value=0)
 
 # Define colors for each year
-colors = ['#1D2371', '#7ABAFF', '#C9E3FF']  # Shades of blue
+colors = ['#1D2371', '#7ABAFF', '#475877']  # Shades of blue
 
 # Streamlit app
 def main():
