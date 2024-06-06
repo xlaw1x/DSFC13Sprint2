@@ -87,7 +87,7 @@ def plot_bar_chart(df):
     direction_counts = df['Direction'].value_counts()
 
     colors = ['lightgray'] * 5  # Default color of other directions
-    colors[:2] = ['skyblue'] * 2  # Change color for NB and SB
+    colors[idx][:2] = ['#1D2371'] * 2  # Change color for NB and SB
 
     fig, ax = plt.subplots(figsize=(10, 6))
     direction_counts.plot(kind='bar', color=colors, ax=ax)
