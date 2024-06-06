@@ -41,6 +41,9 @@ def main():
     st.write('Graph:')
     plot_graph(df)
 
+if __name__ == '__main__':
+    main()
+
 # # Add some matplotlib code !
 # fig, ax = plt.subplots()
 # df.hist(
