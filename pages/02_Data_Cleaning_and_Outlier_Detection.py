@@ -48,8 +48,7 @@ def main():
     st.write('This app detects outliers in the Latitude column.')
 
     # Display the DataFrame
-    st.write('Data:')
-    st.write(df)
+    st.write(df['Latitude'])
 
     # Outlier detection
     z_scores = stats.zscore(df['Latitude'])
