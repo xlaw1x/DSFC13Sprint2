@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('images/title.png', width=100)
+st.image('images/title.png')
 st.title ('HELLO, :red[RISKS], GOODBYE.') 
 st.header('Profiling Churn Risk of Customers for Cost Optimization', divider='red')
 st.caption('Group 1 Exp1orers - Francesca Panga | Jacob Fuentebella | Jersy Carino | Leonard Inciso | Lester Covarrubias II')
