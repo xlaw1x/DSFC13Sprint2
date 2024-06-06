@@ -84,8 +84,8 @@ if __name__ == '__main__':
 # ACCIDENTS PER DIRECTION
 # Function to plot bar chart
 def plot_bar_chart(df):
-    colors = ['lightgray'] * 5  # Default color for all directions
-    colors[:2] = ['#1D2371'] * 2  # Change color for NB and SB
+    colors = ['#1D2371'] * 5  # Default color for all directions
+    colors[:2] = ['skyblue'] * 2  # Change color for NB and SB
 
     fig, ax = plt.subplots(figsize=(10, 6))
     df.plot(kind='bar', x='Direction', y='Number of Accidents', color=colors, ax=ax)
