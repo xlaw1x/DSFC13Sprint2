@@ -81,6 +81,47 @@ def main():
 if __name__ == '__main__':
     main()
 
+
+# TOP LOCATIONS WHERE ACCIDENTS OCCUR
+# Function to plot bar chart
+def plot_bar_chart(df):
+    top_cities = df['Location'].value_counts().head(10)
+
+    colors = ['lightgray'] * len(top_cities)
+    top_cities_index = top_cities.index[:3]
+    for idx in range(len(colors)):
+        if idx < 3:
+            colors[idx] = '#1D2371'  # Change to #1D2371 for the top 3 cities
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.barh(top_cities.index, top_cities.values, color=colors)
+    for spine in ['right', 'top']:
+        ax.spines[spine].set_visible(False)
+
+    plt.xlabel('Number of Accidents')
+    plt.ylabel('Location')
+    plt.title('Top Locations Where Accidents Occur')
+    plt.gca().invert_yaxis()  # To display from highest to lowest
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Top Accident Locations')
+    st.write('This app visualizes the top locations where accidents occur.')
+
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df)
+
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
+
+
+
 # ACCIDENTS PER DIRECTION
 # Function to plot bar chart
 def plot_bar_chart(df):
