@@ -12,9 +12,8 @@ st.title("Hello world YAY!")
 df = pd.read_csv('data/involved_data_final.csv')
 #st.dataframe(df)
 
-numerical_df_eda=df
-fraud_map = {0: 'multiple_accident', 1: 'self_accident'}
-numerical_df_eda['Class'] = numerical_df_eda['is_self_accident'].map(fraud_map)
+fraud_map = {0: 'is_not_self_accident', 1: 'self_accident'}
+df['Class'] = df['is_self_accident'].map(fraud_map)
 
 # Plotting function
 def plot_graph(data):
@@ -36,11 +35,11 @@ def main():
 
     # Display the DataFrame
     st.write('Data:')
-    st.write(numerical_df_eda['Class'].value_counts())
+    st.write(df['Class'].value_counts())
 
     # Plot the graph
     st.write('Graph:')
-    plot_graph(numerical_df_eda)
+    plot_graph(df)
 
 # # Add some matplotlib code !
 # fig, ax = plt.subplots()
