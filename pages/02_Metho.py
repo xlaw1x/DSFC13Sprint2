@@ -84,11 +84,13 @@ if __name__ == '__main__':
 # ACCIDENTS PER DIRECTION
 # Function to plot bar chart
 def plot_bar_chart(df):
-    colors = ['#1D2371'] * 5  # Default color for all directions
+    direction_counts = df['Direction'].value_counts()
+
+    colors = ['lightgray'] * 5  # Default color of other directions
     colors[:2] = ['skyblue'] * 2  # Change color for NB and SB
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    df.plot(kind='bar', x='Direction', y='Number of Accidents', color=colors, ax=ax)
+    direction_counts.plot(kind='bar', color=colors, ax=ax)
 
     # Customizing the plot
     ax.set_xlabel('Direction')
@@ -104,10 +106,13 @@ def main():
     st.title('Accidents by Direction')
     st.write('This app visualizes the number of accidents by direction.')
 
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df)
+
     # Plot the bar chart
     st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
     main()
-    
