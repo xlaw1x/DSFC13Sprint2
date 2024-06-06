@@ -23,7 +23,7 @@ df = pd.read_csv('data/involved_data_final.csv')
 # st.write(fig)
 
 numerical_df=df
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 fraud_map = {0: 'multiple_accident', 1: 'self_accident'}
 numerical_df_eda = numerical_df.copy()
 numerical_df_eda['Class'] = numerical_df_eda['is_self_accident'].map(fraud_map)
