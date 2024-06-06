@@ -42,7 +42,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-
+#Find outliers
 def main():
     st.title('Outlier Detection for Latitude')
     st.write('This app detects outliers in the Latitude column.')
@@ -57,3 +57,13 @@ def main():
 
     # Filter outliers
     outliers = df[df['lat_zscore'] > 3]
+
+# Display outliers
+    if not outliers.empty:
+        st.write('Outliers Detected:')
+        st.write(outliers)
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
