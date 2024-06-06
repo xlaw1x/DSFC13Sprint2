@@ -7,11 +7,13 @@ import seaborn as sns
 # from nltk.corpus import stopwords
 # import nltk
 
-st.title("Hello world YAY!")
+st.title("Exploratory Data Analysis")
 
 df = pd.read_csv('data/involved_data_final.csv')
 # st.dataframe(df)
 
+
+# SELF ACCIDENT VS NOT SELF ACCIDENT
 fraud_map = {0: 'is_not_self_accident', 1: 'self_accident'}
 df['Class'] = df['is_self_accident'].map(fraud_map)
 
@@ -44,35 +46,42 @@ def main():
 if __name__ == '__main__':
     main()
 
-# # Add some matplotlib code !
-# fig, ax = plt.subplots()
-# df.hist(
-#   bins=8,
-#   column="Type",
-#   grid=False,
-#   figsize=(8, 8),
-#   color="#86bf91",
-#   zorder=2,
-#   rwidth=0.9,
-#   ax=ax,
-# )
-# st.write(fig)
 
-# numerical_df=df
-# #fig, ax = plt.subplots()
-# fraud_map = {0: 'multiple_accident', 1: 'self_accident'}
-# numerical_df_eda = numerical_df.copy()
-# numerical_df_eda['Class'] = numerical_df_eda['is_self_accident'].map(fraud_map)
+# TOP CITIES WHERE ACCIDENTS OCCUR
+# Function to plot bar chart
+def plot_bar_chart(df):
+    top_cities = df['City'].value_counts().head(8)
+    df_sorted = df[df['City'].isin(top_cities.index)]
 
-# fig, ax = plt.subplots(figsize=(8, 6))
-# ax = sns.countplot(x=numerical_df_eda['Class'],
-#               order=numerical_df_eda['Class'].value_counts().index,
-#               color='skyblue')
-# ax.set_xlabel(' ')
-# ax.set_ylabel(' ')
-# for spine in ['right', 'top']:
-#     ax.spines[spine].set_visible(False)
-# ax.set_title(f'Distribution of Vehicular Accidents in Metro Manila', size=15, y=1)
-# display(numerical_df_eda['Class'].value_counts())
-# plt.show()
-#st.write(fig)
+    # Create color list
+    colors = ['lightgray'] * len(top_cities)
+    for idx, city in enumerate(top_cities.index):
+        if city in top_cities.index[:3]:
+            colors[idx] = 'skyblue'
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.barh(top_cities.index, top_cities.values, color=colors)
+    ax.set_xlabel('Number of Accidents')
+    ax.set_ylabel('City')
+    ax.set_title('Top Cities Where Accidents Occur')
+    ax.invert_yaxis()  # To display from highest to lowest
+    for spine in ['right', 'top']:
+        ax.spines[spine].set_visible(False)
+    st.pyplot(fig)
+
+# Streamlit app
+def main():
+    st.title('Accidents Occurrence by City')
+    st.write('This app visualizes the top cities where accidents occur.')
+
+    # Display the DataFrame
+    st.write('Data:')
+    st.write(df)
+
+    # Plot the bar chart
+    st.write('Bar Chart:')
+    plot_bar_chart(df)
+
+if __name__ == '__main__':
+    main()
+    
