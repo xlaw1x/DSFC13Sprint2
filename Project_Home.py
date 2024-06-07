@@ -24,29 +24,27 @@ st.header('Methodology', divider='blue')
 st.image('images/methodology.png')
 st.write('---')
 
-%%writefile "/content/drive/MyDrive/Eskwelabs/Notebooks/Filled Notebooks/streamlit_app.py"
-# general libraries
-import pickle
-import pandas as pd
-
-# model deployment
-from flask import Flask
 import streamlit as st
-
-from operator import index
-%%writefile "/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/streamlit_app.py"
-# general libraries
 import pickle
-import pandas as pd
 
-# model deployment
-from flask import Flask
-import streamlit as st
+# Load the model
+with open('baseline_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
-# read model and holdout data
-model = pickle.load(open('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/Filled Notebooks/gb_tk.pkl', 'rb'))
-X_holdout = pd.read_csv('/content/drive/MyDrive/Eskwelabs/Notebooks/Filled Notebooks/holdout.csv', index_col=0)
-holdout_accidents = X_holdout.index.to_list()
+
+# from operator import index
+# # general libraries
+# import pickle
+# import pandas as pd
+
+# # model deployment
+# from flask import Flask
+# import streamlit as st
+
+# # read model and holdout data
+# model = pickle.load(open('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/Filled Notebooks/gb_tk.pkl', 'rb'))
+# X_holdout = pd.read_csv('/content/drive/MyDrive/Eskwelabs/Notebooks/Filled Notebooks/holdout.csv', index_col=0)
+# holdout_accidents = X_holdout.index.to_list()
 
 st.title("Self-accident Detection")
 html_temp = """
