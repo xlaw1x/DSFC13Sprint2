@@ -1,5 +1,7 @@
 import streamlit as st
 
+def header(url):
+     st.markdown(f'<p style="background-color:#F5F0E8;color:#1B1954;font-size:24px;border-radius:2%;">{url}</p>', unsafe_allow_html=True)
 st.image('images/title.png')
 st.caption('Group 1 Exp1orers - Francesca Panga | Jacob Fuentebella | Jersy Carino | Leonard Inciso | Lester Covarrubias II')
 
