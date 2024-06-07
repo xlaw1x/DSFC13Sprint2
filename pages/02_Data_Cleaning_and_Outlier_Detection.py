@@ -5,10 +5,13 @@ import numpy as np
 import seaborn as sns
 import scipy.stats as stats
 
-st.title("Data Cleaning, Preprocessing, and Outlier Detection")
+st.title("Data Cleaning and Preprocessing")
 st.write("Here you can put each of your key results.")
 
 df = pd.read_csv('data/involved_data_final.csv')
+
+st.title("Outlier Detection and Treatment")
+st.write("Here you can put each of your key results.")
 
 # LATITUDE AND LONGITUDE OUTLIER PLOT
 def main():
@@ -43,7 +46,7 @@ if __name__ == '__main__':
 
 # LATITUDE OUTLIERS
 def main():
-    st.header('Outlier Detection for Latitude')
+    st.subheader('Outlier Detection for Latitude')
 
     # Outlier detection
     z_scores = stats.zscore(df['Latitude'])
@@ -69,7 +72,7 @@ if __name__ == '__main__':
 #LONGITUDE OUTLIERS
 # Streamlit app for outlier detection for Longitude
 def main():
-    st.title('Outlier Detection for Longitude')
+    st.subheader('Outlier Detection for Longitude')
 
     # Outlier detection
     z_scores = stats.zscore(df['Longitude'])
@@ -126,7 +129,7 @@ if __name__ == '__main__':
 #YEAR OUTLIERS
 # Streamlit app for outlier detection for Longitude
 def main():
-    st.header('Outlier Detection for YEAR')
+    st.subheader('Outlier Detection for YEAR')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_year'])
@@ -151,7 +154,7 @@ if __name__ == '__main__':
 #MONTH OUTLIERS
 # Streamlit app for outlier detection for Longitude
 def main():
-    st.header('Outlier Detection for Month')
+    st.subheader('Outlier Detection for Month')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_month'])
@@ -207,7 +210,7 @@ if __name__ == '__main__':
 
 # DAY OUTLIERS
 def main():
-    st.header('Outlier Detection for Day of the Month')
+    st.subheader('Outlier Detection for Day of the Month')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_day'])
@@ -231,7 +234,7 @@ if __name__ == '__main__':
 
 # WEEKDAY OUTLIERS
 def main():
-    st.header('Outlier Detection for Weekday')
+    st.subheader('Outlier Detection for Weekday')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_weekday'])
@@ -287,7 +290,7 @@ if __name__ == '__main__':
 
 # HOUR OUTLIERS
 def main():
-    st.header('Outlier Detection for Hour')
+    st.subheader('Outlier Detection for Hour')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_hour'])
@@ -311,7 +314,7 @@ if __name__ == '__main__':
 
 # DIRECTION OUTLIERS
 def main():
-    st.header('Outlier Detection for Road Direction')
+    st.subheader('Outlier Detection for Road Direction')
 
     # Outlier detection
     z_scores = stats.zscore(df['Direction_Numeric'])
