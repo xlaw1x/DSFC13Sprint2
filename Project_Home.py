@@ -8,34 +8,38 @@ import streamlit as st
 #     initial_sidebar_state="expanded",
 # )
 
-# Set background color
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #30D5C8; /* Change this to your desired background color */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
+# Set page configuration with light theme
+st.set_page_config(
+    page_title="Your Page Title",
+    page_icon="Your Page Icon URL",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    theme="light"  # Set the theme to "light"
 )
 
-# Set text color
-st.markdown(
-    """
-    <style>
-    body, label, .css-vfskoc, .st-ab, .st-ag {
-        color: #0000FF; /* Change this to your desired text color */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# # Set background color
+# st.markdown(
+#     """
+#     <style>
+#     body {
+#         background-color: #30D5C8; /* Change this to your desired background color */
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True,
+# )
 
-# Your Streamlit code here
-# For example:
-st.title('Welcome to My Streamlit App!')
-st.write('This is where you can write your Streamlit app content.')
+# # Set text color
+# st.markdown(
+#     """
+#     <style>
+#     body, label, .css-vfskoc, .st-ab, .st-ag {
+#         color: #0000FF; /* Change this to your desired text color */
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True,
+# )
 
 
 st.image('images/title.png')
