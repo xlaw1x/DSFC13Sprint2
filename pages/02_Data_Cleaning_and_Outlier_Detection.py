@@ -59,8 +59,7 @@ def main():
         st.write('Number of Latitude Outliers Detected:', len(outliers))
         min_outlier = outliers['Latitude'].min()
         max_outlier = outliers['Latitude'].max()
-        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 2), round(max_outlier, 2)))
-        #st.write('with a range of: [{}, {}]'.format(outliers[round('Latitude',3)].min(), outliers[round('Latitude',3)].max()))
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['Latitude'])
     else:
         st.write('No outliers detected.')
@@ -85,6 +84,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Longitude Outliers Detected:', len(outliers))
+        min_outlier = outliers['Longitude'].min()
+        max_outlier = outliers['Longitude'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['Longitude'])
     else:
         st.write('No outliers detected in Longitude.')
@@ -141,6 +143,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Outliers Detected in Year:', len(outliers))
+        min_outlier = outliers['acc_year'].min()
+        max_outlier = outliers['acc_year'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['acc_year'])
     else:
         st.write('No outliers detected in Year.')
@@ -164,6 +169,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Outliers Detected in Month:', len(outliers))
+        min_outlier = outliers['acc_month'].min()
+        max_outlier = outliers['acc_month'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['acc_month'])
     else:
         st.write('No outliers detected in Month.')
@@ -218,6 +226,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number Outliers Detected in Day of the Month:', len(outliers))
+        min_outlier = outliers['acc_day'].min()
+        max_outlier = outliers['acc_day'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['acc_day'])
     else:
         st.write('No outliers detected.')
@@ -240,6 +251,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Weekday Outliers Detected:', len(outliers))
+        min_outlier = outliers['acc_weekday'].min()
+        max_outlier = outliers['acc_weekday'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['acc_weekday'])
     else:
         st.write('No outliers detected.')
@@ -293,6 +307,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number Outliers Detected in Hour:', len(outliers))
+        min_outlier = outliers['acc_hour'].min()
+        max_outlier = outliers['acc_hour'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['acc_hour'])
     else:
         st.write('No outliers detected.')
@@ -314,6 +331,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Road Direction Outliers Detected:', len(outliers))
+        min_outlier = outliers['Direction_Numeric'].min()
+        max_outlier = outliers['Direction_Numeric'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['Direction_Numeric'])
     else:
         st.write('No outliers detected.')
@@ -369,6 +389,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number Outliers Detected in Number of Lanes Blocked:', len(outliers))
+        min_outlier = outliers['Lanes_Blocked'].min()
+        max_outlier = outliers['Lanes_Blocked'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['Lanes_Blocked'])
     else:
         st.write('No outliers detected.')
@@ -390,6 +413,9 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Sum Outliers Detected:', len(outliers))
+        min_outlier = outliers['Sum'].min()
+        max_outlier = outliers['Sum'].max()
+        st.write('Range of Outlier Values: [{}, {}]'.format(round(min_outlier, 3), round(max_outlier, 3)))
         st.write(outliers['Sum'])
     else:
         st.write('No outliers detected.')
