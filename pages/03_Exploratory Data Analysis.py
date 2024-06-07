@@ -326,3 +326,7 @@ if __name__ == '__main__':
 
 st.title('All Road Accidents vs Self-accidents')
 st.write('Now take a look at a side-by-side comparison of all road accidents to self-accidents.')
+
+st.image("images/distribution_of_vehicles.png")
+st.image("images/top_cities.png")
+st.image("images/distribution_of_vehicles.png")
