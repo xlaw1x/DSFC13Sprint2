@@ -24,15 +24,12 @@ st.header('Methodology', divider='blue')
 st.image('images/methodology.png')
 st.write('---')
 
-# import streamlit as st
-# import pickle
-
-(os.getcwd())
-
-
 import streamlit as st
 import pickle
-import pandas as pd
+
+# Load the model
+with open('baseline_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # # Load the model
 # model = pickle.load(open('data/baseline_model.pkl', 'rb'))
