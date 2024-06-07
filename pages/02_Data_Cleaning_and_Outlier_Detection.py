@@ -10,7 +10,7 @@ st.write("The dataset used in this project was obtained from the Kaggle website 
 st.write("This data from Kaggle was webscraped from the Metropolitan Manila Development Authority's (MMDA) official Twitter.") 
 
 st.write("The initial dataset has 17,312 rows and 13 columns as shown below.")
-st.image('images/dfinfo1.png', width = 300)
+st.image('images/dfinfo1.png', width = 0.8)
 st.write("Despite the data already being partially preprocessed, the group had to further clean it through the following methods:")
 st.write("1. Drop null values in the 'Type' column.")
 st.write("2. ")
