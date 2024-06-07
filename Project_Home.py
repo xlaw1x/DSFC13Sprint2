@@ -27,16 +27,17 @@ st.write('---')
 # import streamlit as st
 # import pickle
 
-# # Load the model
-# with open('baseline_model.pkl', 'rb') as f:
-#     model = pickle.load(f)
+
 
 import streamlit as st
 import pickle
 import pandas as pd
 
+# # Load the model
+# model = pickle.load(open('data/baseline_model.pkl', 'rb'))
 # Load the model
-model = pickle.load(open('data/baseline_model.pkl', 'rb'))
+with open('baseline_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # Load the holdout data
 X_holdout = pd.read_csv('data/holdout.csv', index_col=0)
