@@ -57,7 +57,7 @@ def main():
     # Display outliers
     if not outliers.empty:
         st.write('Number of Latitude Outliers Detected:', len(outliers))
-        st.write('with a range of: [{}, {}]'.format(outliers['Latitude'].min(), outliers['Latitude'].max()))
+        st.write('with a range of: [{}, {}]'.format(outliers[round('Latitude',3)].min(), outliers[round('Latitude',3)].max()))
         st.write(outliers['Latitude'])
     else:
         st.write('No outliers detected.')
