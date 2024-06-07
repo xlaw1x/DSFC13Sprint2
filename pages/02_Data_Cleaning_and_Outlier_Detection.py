@@ -200,3 +200,45 @@ def main():
 if __name__ == '__main__':
     main()
 
+# DAY OUTLIERS
+def main():
+    st.title('Outlier Detection for Day of the Month')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['acc_day'])
+    df['acc_day_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['acc_day_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number Outliers Detected in Day of the Month:', len(outliers))
+        st.write(outliers['acc_day'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
+# WEEKDAY OUTLIERS
+def main():
+    st.title('Outlier Detection for Weekday')
+    st.write('This app detects outliers in the Weekday column.')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['acc_weekday'])
+    df['acc_weekday_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['acc_weekday_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number of Weekday Outliers Detected:', len(outliers))
+        st.write(outliers['acc_weekday'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
