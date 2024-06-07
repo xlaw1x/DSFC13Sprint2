@@ -34,8 +34,7 @@ def plot_graph(data):
 # Streamlit app
 def main():
     st.header('Vehicular Accidents in Metro Manila')
-    st.write('This app visualizes the distribution of vehicular accidents.')
-
+    
     # Display the DataFrame
     st.write('Data:')
     st.write(df['Class'].value_counts())
@@ -47,6 +46,7 @@ def main():
 if __name__ == '__main__':
     main()
 
+st.write('The graph above shows the distribution of vehicular accidents between two categories: is_not_self_accident (98.47% majority) and is_self_accident (1.53% minority), a highly imbalanced dataset. So where do these accidents usually occur?')
 
 
 # TOP CITIES WHERE ACCIDENTS OCCUR
@@ -83,6 +83,7 @@ def main():
 if __name__ == '__main__':
     main()
 
+st.write('The graph above shows the top 3 cities in Metro Manila where these accidents occur are Quezon City, Mandaluyong, and Makati City. Which roads do these accidents occur most often?')
 
 
 # TOP LOCATIONS WHERE ACCIDENTS OCCUR
@@ -119,6 +120,7 @@ def main():
 if __name__ == '__main__':
     main()
 
+st.write('As indicated in the above graph, road accidents are most likely to occur in EDSA, specifically Shaw, Guadalupe, and Megamall.')
 
 
 # ACCIDENTS PER DIRECTION
