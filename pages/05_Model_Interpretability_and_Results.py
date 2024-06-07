@@ -8,15 +8,15 @@ st.image("images/beeswarm.png")
 
 st.image("images/FP1.png")
 st.caption("Force Plot for Datapoint 1 That Is a self_accident with One Involved Vehicle")
-st.image("images/lIME1.png")
+st.image("images/LIME1.png")
 st.caption("LIME Prediction Probabilities for a Datapoint 1 That Is a self_accident with One Involved Vehicle")
 
 st.image("images/FP2.png")
 st.caption("Force Plot for Datapoint 2 That Is a non_self_accident with One Involved Vehicle")
-st.image("images/lIME2.png")
+st.image("images/LIME2.png")
 st.caption("LIME Prediction Probabilities for a Datapoint 2 That Is a non_self_accident with One Involved Vehicle")
 
 st.image("images/FP3.png")
 st.caption("Force Plot for Datapoint 3 That Is a non_self_accident with Multiple Involved Vehicles")
-st.image("images/lIME3.png")
+st.image("images/LIME3.png")
 st.caption("LIME Prediction Probabilities for a Datapoint 3 That Is a non_self_accident with Multiple Involved Vehicles")
