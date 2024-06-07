@@ -242,3 +242,154 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# ACCIDENTS PER HOUR AND DIRECTION NUMERIC OUTLIER PLOT
+def main():
+    st.title('Distribution of Accidents per Hour or per Road Direction')
+
+    # Extract numerical columns
+    numerical_cols = ['acc_hour', 'Direction_Numeric']
+    self_accident_quant = df[numerical_cols]
+
+    # Set Seaborn style and color palette
+    sns.set_style("white")
+    sns.set_palette(["#1D2371"])
+
+
+    # Plotting the distributions
+    fig, ax = plt.subplots(1, 2, figsize=(16, 4))
+    fig.suptitle('Distribution', fontsize=16)
+
+    # Distribution of Latitude
+    sns.histplot(self_accident_quant["acc_hour"], ax=ax[0], kde=True)
+    ax[0].set_title('Distribution of Accidents per Hour')
+
+    # Distribution of Longitude
+    sns.histplot(self_accident_quant["Direction_Numeric"], ax=ax[1], kde=True)
+    ax[1].set_title('Distribution of Accidents per Road Direction')
+
+    # Show the plot
+    st.pyplot(fig)
+
+if __name__ == '__main__':
+    main()
+
+# HOUR OUTLIERS
+def main():
+    st.title('Outlier Detection for Hour')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['acc_hour'])
+    df['acc_hour_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['acc_hour_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number Outliers Detected in Hour:', len(outliers))
+        st.write(outliers['acc_hour'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
+# DIRECTION OUTLIERS
+def main():
+    st.title('Outlier Detection for Road Direction')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['Direction_Numeric'])
+    df['Direction_Numeric_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['Direction_Numeric_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number of Road Direction Outliers Detected:', len(outliers))
+        st.write(outliers['Direction_Numeric'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+# ACCIDENTS PER LANES BLOCKED AND SUM OUTLIER PLOT
+def main():
+    st.title('Distribution of Accidents per Number of Lanes Blocked and per Sum of Vehicles Involved')
+
+    # Extract numerical columns
+    numerical_cols = ['Lanes_Blocked', 'Sum']
+    self_accident_quant = df[numerical_cols]
+
+    # Set Seaborn style and color palette
+    sns.set_style("white")
+    sns.set_palette(["#1D2371"])
+
+
+    # Plotting the distributions
+    fig, ax = plt.subplots(1, 2, figsize=(16, 4))
+    fig.suptitle('Distribution', fontsize=16)
+
+    # Distribution of Lanes_Blocked
+    sns.histplot(self_accident_quant["Lanes_Blocked"], ax=ax[0], kde=True)
+    ax[0].set_title('Distribution of Accidents per Number of Lanes Blocked')
+
+    # Distribution of Sum
+    sns.histplot(self_accident_quant["Sum"], ax=ax[1], kde=True)
+    ax[1].set_title('Distribution of Accidents per Sum of Vehicles Involved')
+
+    # Show the plot
+    st.pyplot(fig)
+
+if __name__ == '__main__':
+    main()
+
+# LANES BLOCKED OUTLIERS
+def main():
+    st.title('Outlier Detection for Day of the Month')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['Lanes_Blocked'])
+    df['Lanes_Blocked_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['Lanes_Blocked_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number Outliers Detected in Number of Lanes Blocked:', len(outliers))
+        st.write(outliers['Lanes_Blocked'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
+# SUM OUTLIERS
+def main():
+    st.title('Outlier Detection for Sum of Vehicles Involved')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['Sum'])
+    df['Sum_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['Sum_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Number of Sum Outliers Detected:', len(outliers))
+        st.write(outliers['Sum'])
+    else:
+        st.write('No outliers detected.')
+
+if __name__ == '__main__':
+    main()
+
