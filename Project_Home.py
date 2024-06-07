@@ -8,12 +8,18 @@ st.subheader('Intro description')
 st.image('images/mmda_geopandas.png')
 st.write('---')
 
-st.header('Case Study')
+st.header('Case Study', divider='blue')
 st.write('Sustainable Development Goal 3:')
 st.write('Sustainable Development Goal 11:')
 st.write('---')
+
 st.header('Scope', divider='blue')
+st.write('---')
+
 st.header('Objectives', divider='blue')
 st.image('images/objectives.png')
+st.write('---')
+
 st.header('Methodology', divider='blue')
 st.image('images/methodology.png')
+st.write('---')
