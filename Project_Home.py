@@ -34,6 +34,13 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# Your Streamlit code here
+# For example:
+st.title('Welcome to My Streamlit App!')
+st.write('This is where you can write your Streamlit app content.')
+
+
 st.image('images/title.png')
 st.caption('Group 1 Exp1orers - Francesca Panga | Jacob Fuentebella | Jersy Carino | Leonard Inciso | Lester Covarrubias II')
 
