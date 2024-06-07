@@ -1,12 +1,12 @@
 import streamlit as st
 
-# Set page configuration
-st.set_page_config(
-    page_title="Your Page Title",
-    page_icon="Your Page Icon URL",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+# # Set page configuration
+# st.set_page_config(
+#     page_title="Your Page Title",
+#     page_icon="Your Page Icon URL",
+#     layout="wide",
+#     initial_sidebar_state="expanded",
+# )
 
 # Set background color
 st.markdown(
