@@ -12,8 +12,7 @@ df = pd.read_csv('data/involved_data_final.csv')
 
 # LATITUDE AND LONGITUDE OUTLIER PLOT
 def main():
-    st.title('Distribution of Latitude and Longitude')
-    st.write('This app visualizes the distribution of latitude and longitude.')
+    st.header('Distribution of Latitude and Longitude')
 
     # Extract numerical columns
     numerical_cols = ['Latitude', 'Longitude']
@@ -44,8 +43,7 @@ if __name__ == '__main__':
 
 # LATITUDE OUTLIERS
 def main():
-    st.title('Outlier Detection for Latitude')
-    st.write('This app detects outliers in the Latitude column.')
+    st.header('Outlier Detection for Latitude')
 
     # Outlier detection
     z_scores = stats.zscore(df['Latitude'])
@@ -72,7 +70,6 @@ if __name__ == '__main__':
 # Streamlit app for outlier detection for Longitude
 def main():
     st.title('Outlier Detection for Longitude')
-    st.write('This app detects outliers in the Longitude column.')
 
     # Outlier detection
     z_scores = stats.zscore(df['Longitude'])
@@ -97,8 +94,7 @@ if __name__ == '__main__':
 
 # ACCIDENTS PER YEAR AND MONTH OUTLIER PLOT
 def main():
-    st.title('Distribution of Accidents per Year or per Month')
-    st.write('This app visualizes the distribution of accidents in timeframe.')
+    st.header('Distribution of Accidents per Year or per Month')
 
     # Extract numerical columns
     numerical_cols = ['acc_year', 'acc_month']
@@ -130,8 +126,7 @@ if __name__ == '__main__':
 #YEAR OUTLIERS
 # Streamlit app for outlier detection for Longitude
 def main():
-    st.title('Outlier Detection for YEAR')
-    st.write('This app detects outliers in the acc_year column.')
+    st.header('Outlier Detection for YEAR')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_year'])
@@ -156,8 +151,7 @@ if __name__ == '__main__':
 #MONTH OUTLIERS
 # Streamlit app for outlier detection for Longitude
 def main():
-    st.title('Outlier Detection for Month')
-    st.write('This app detects outliers in the Month column.')
+    st.header('Outlier Detection for Month')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_month'])
@@ -182,8 +176,7 @@ if __name__ == '__main__':
 
 # ACCIDENTS PER DAY AND WEEKDAY OUTLIER PLOT
 def main():
-    st.title('Distribution of Accidents per Day or per Weekday')
-    st.write('This app visualizes the distribution of accidents in timeframe.')
+    st.header('Distribution of Accidents per Day or per Weekday')
 
     # Extract numerical columns
     numerical_cols = ['acc_day', 'acc_weekday']
@@ -214,7 +207,7 @@ if __name__ == '__main__':
 
 # DAY OUTLIERS
 def main():
-    st.title('Outlier Detection for Day of the Month')
+    st.header('Outlier Detection for Day of the Month')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_day'])
@@ -238,8 +231,7 @@ if __name__ == '__main__':
 
 # WEEKDAY OUTLIERS
 def main():
-    st.title('Outlier Detection for Weekday')
-    st.write('This app detects outliers in the Weekday column.')
+    st.header('Outlier Detection for Weekday')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_weekday'])
@@ -264,7 +256,7 @@ if __name__ == '__main__':
 
 # ACCIDENTS PER HOUR AND DIRECTION NUMERIC OUTLIER PLOT
 def main():
-    st.title('Distribution of Accidents per Hour or per Road Direction')
+    st.header('Distribution of Accidents per Hour or per Road Direction')
 
     # Extract numerical columns
     numerical_cols = ['acc_hour', 'Direction_Numeric']
@@ -295,7 +287,7 @@ if __name__ == '__main__':
 
 # HOUR OUTLIERS
 def main():
-    st.title('Outlier Detection for Hour')
+    st.header('Outlier Detection for Hour')
 
     # Outlier detection
     z_scores = stats.zscore(df['acc_hour'])
@@ -319,7 +311,7 @@ if __name__ == '__main__':
 
 # DIRECTION OUTLIERS
 def main():
-    st.title('Outlier Detection for Road Direction')
+    st.header('Outlier Detection for Road Direction')
 
     # Outlier detection
     z_scores = stats.zscore(df['Direction_Numeric'])
@@ -346,7 +338,7 @@ df_sum = pd.read_csv('data/involved_data_final_TEST.csv')
 
 # ACCIDENTS PER LANES BLOCKED AND SUM OUTLIER PLOT
 def main():
-    st.title('Distribution of Accidents per Number of Lanes Blocked and per Sum of Vehicles Involved')
+    st.header('Distribution of Accidents per Number of Lanes Blocked and per Sum of Vehicles Involved')
 
     # Extract numerical columns
     numerical_cols = ['Lanes_Blocked', 'Sum']
@@ -377,7 +369,7 @@ if __name__ == '__main__':
 
 # LANES BLOCKED OUTLIERS
 def main():
-    st.title('Outlier Detection for Day of the Month')
+    st.subheader('Outlier Detection for Day of the Month')
 
     # Outlier detection
     z_scores = stats.zscore(df_sum['Lanes_Blocked'])
@@ -401,7 +393,7 @@ if __name__ == '__main__':
 
 # SUM OUTLIERS
 def main():
-    st.title('Outlier Detection for Sum of Vehicles Involved')
+    st.subheader('Outlier Detection for Sum of Vehicles Involved')
 
     # Outlier detection
     z_scores = stats.zscore(df_sum['Sum'])
