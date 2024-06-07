@@ -36,10 +36,10 @@ import pickle
 import pandas as pd
 
 # Load the model
-model = pickle.load(open('baseline_model.pkl', 'rb'))
+model = pickle.load(open('data/baseline_model.pkl', 'rb'))
 
 # Load the holdout data
-X_holdout = pd.read_csv('holdout.csv', index_col=0)
+X_holdout = pd.read_csv('data/holdout.csv', index_col=0)
 holdout_accidents = X_holdout.index.to_list()
 
 # Streamlit app
