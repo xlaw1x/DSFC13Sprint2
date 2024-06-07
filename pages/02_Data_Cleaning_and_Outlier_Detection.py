@@ -56,7 +56,7 @@ def main():
 
     # Display outliers
     if not outliers.empty:
-        st.write('Outliers Detected:')
+        st.write('Number of Latitude Outliers Detected:', len(outliers))
         st.write(outliers['Latitude'])
     else:
         st.write('No outliers detected.')
@@ -80,7 +80,7 @@ def main():
 
     # Display outliers
     if not outliers.empty:
-        st.write('Outliers Detected in Longitude:')
+        st.write('Number of Longitude Outliers Detected:', len(outliers))
         st.write(outliers['Longitude'])
     else:
         st.write('No outliers detected in Longitude.')
@@ -136,7 +136,7 @@ def main():
 
     # Display outliers
     if not outliers.empty:
-        st.write('Outliers Detected in Year:')
+        st.write('Number of Outliers Detected in Year:', len(outliers))
         st.write(outliers['acc_year'])
     else:
         st.write('No outliers detected in Year.')
@@ -159,7 +159,7 @@ def main():
 
     # Display outliers
     if not outliers.empty:
-        st.write('Outliers Detected in Month:')
+        st.write('Number of Outliers Detected in Month:', len(outliers))
         st.write(outliers['acc_month'])
     else:
         st.write('No outliers detected in Month.')
