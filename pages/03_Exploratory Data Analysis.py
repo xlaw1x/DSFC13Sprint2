@@ -74,10 +74,8 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents Occurrence by City')
-    st.write('This app visualizes the top cities where accidents occur.')
     
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
@@ -111,10 +109,8 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Top Accident Locations')
-    st.write('This app visualizes the top locations where accidents occur.')
 
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
@@ -146,15 +142,14 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents by Direction')
-    st.write('This app visualizes the number of accidents by direction.')
 
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
     main()
 
+st.write('The North-bound and South-bound lanes are found to have the most accident occurences, because these are the roads located in the cities with the most accidents, such as Commonwealth in Quezon City or EDSA in Mandaluyong.')
 
 #ACCIDENTS PER TIME OF DAY
 # Function to plot bar chart
@@ -179,15 +174,14 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents by Time of Day')
-    st.write('This app visualizes the number of accidents by time of day.')
 
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
     main()
 
+st.write('The bar graph above shows that most accidents occur in the morning, but why is that? The succeeding graph showing the distribution of accidents throughout hours of the day can help shed more light on this.')
 
 #ACCIDENTS THROUGHOUT THE DAY
 # Function to plot line chart
@@ -211,15 +205,14 @@ def plot_line_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents by Hour of the Day')
-    st.write('This app visualizes the number of accidents by hour of the day.')
 
     # Plot the line chart
-    st.write('Line Chart:')
     plot_line_chart(df)
 
 if __name__ == '__main__':
     main()
-
+    
+st.write('This time-series plot shows the spike in accidents between 5 and 10 am, which is commonly known as rush hour in the Philippines. Vehicles rushing to work are likely to speed or have less focus or patience on the road, resulting in accidents.')
 
 # ACCIDENTS PER DAY OF THE WEEK
 # Maps integer value to string value of trans_weekday
@@ -248,15 +241,14 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents by Day of the Week')
-    st.write('This app visualizes the number of accidents by day of the week.')
 
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
     main()
 
+st.write('Accidents per day of the week are not too widely spread, with the exception of Sunday, which is when there is noticably less traffic and vehicles on the road, a factor that could contribute to less accidents occuring on Sundays.')
 
 # ACCIDENTS PER MONTH
 # Function to plot bar chart
@@ -284,7 +276,6 @@ def main():
     st.write('This app visualizes the number of accidents by month.')
 
     # Plot the bar chart
-    st.write('Bar Chart:')
     plot_bar_chart(df)
 
 if __name__ == '__main__':
