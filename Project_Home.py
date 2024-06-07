@@ -31,6 +31,25 @@ import pickle
 with open('baseline_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
+import streamlit as st
+import pickle
+
+# Load the model
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
+
+# Streamlit app
+st.title('Model Deployment with Streamlit')
+
+# Input features
+feature1 = st.slider('Feature 1', 0.0, 10.0, 5.0)
+feature2 = st.slider('Feature 2', 0.0, 10.0, 5.0)
+
+# Make prediction
+prediction = model.predict([[feature1, feature2]])
+
+# Display prediction
+st.write(f'Prediction: {prediction}')
 
 # from operator import index
 # # general libraries
