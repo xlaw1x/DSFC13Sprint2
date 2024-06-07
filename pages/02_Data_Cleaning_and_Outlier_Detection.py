@@ -318,7 +318,7 @@ if __name__ == '__main__':
     main()
 
 
-
+df_sum = pd.read_csv('data/involved_data_final_TEST.csv')
 
 # ACCIDENTS PER LANES BLOCKED AND SUM OUTLIER PLOT
 def main():
@@ -326,7 +326,7 @@ def main():
 
     # Extract numerical columns
     numerical_cols = ['Lanes_Blocked', 'Sum']
-    self_accident_quant = df[numerical_cols]
+    self_accident_quant = df_sum[numerical_cols]
 
     # Set Seaborn style and color palette
     sns.set_style("white")
@@ -356,11 +356,11 @@ def main():
     st.title('Outlier Detection for Day of the Month')
 
     # Outlier detection
-    z_scores = stats.zscore(df['Lanes_Blocked'])
-    df['Lanes_Blocked_zscore'] = abs(z_scores)
+    z_scores = stats.zscore(df_sum['Lanes_Blocked'])
+    df_sum['Lanes_Blocked_zscore'] = abs(z_scores)
 
     # Filter outliers
-    outliers = df[df['Lanes_Blocked_zscore'] > 3]
+    outliers = df_sum[df_sum['Lanes_Blocked_zscore'] > 3]
 
     # Display outliers
     if not outliers.empty:
@@ -377,11 +377,11 @@ def main():
     st.title('Outlier Detection for Sum of Vehicles Involved')
 
     # Outlier detection
-    z_scores = stats.zscore(df['Sum'])
-    df['Sum_zscore'] = abs(z_scores)
+    z_scores = stats.zscore(df_sum['Sum'])
+    df_sum['Sum_zscore'] = abs(z_scores)
 
     # Filter outliers
-    outliers = df[df['Sum_zscore'] > 3]
+    outliers = df_sum[df_sum['Sum_zscore'] > 3]
 
     # Display outliers
     if not outliers.empty:
