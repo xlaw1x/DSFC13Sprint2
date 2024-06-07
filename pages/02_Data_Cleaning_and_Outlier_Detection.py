@@ -103,7 +103,7 @@ def main():
 
     # Set Seaborn style and color palette
     sns.set_style("white")
-    sns.set_palette(["#7ABAFF", "#1D2371"])
+    sns.set_palette(["#1D2371"])
 
 
     # Plotting the distributions
