@@ -25,29 +25,32 @@ st.image('images/methodology.png')
 st.write('---')
 
 
-import streamlit as st
+# general libraries
 import pickle
 import pandas as pd
 
-# Load the model
-model = pickle.load(open('baseline_model.pkl', 'rb'))
+# model deployment
+from flask import Flask
+import streamlit as st
 
-# Load the holdout data
-X_holdout = pd.read_csv('holdout.csv', index_col=0)
+# read model and holdout data
+model = pickle.load(open('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/baseline_model.pkl', 'rb'))
+X_holdout = pd.read_csv('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/holdout.csv', index_col=0)
 holdout_accidents = X_holdout.index.to_list()
 
-# Streamlit app
 st.title("Self-accident Detection")
-
 html_temp = """
 <div style="background:#025246 ;padding:10px">
 <h2 style="color:white;text-align:center;"> Self-accident Detection ML App </h2>
 </div>
 """
-st.markdown(html_temp, unsafe_allow_html=True)
+st.markdown(html_temp, unsafe_allow_html = True)
 
-# Adding a selectbox
-choice = st.selectbox("Select Accident Number:", options=holdout_accidents)
+#adding a selectbox
+choice = st.selectbox(
+    "Select Accident Number:",
+    options = holdout_accidents)
+
 
 def predict_is_self_accident(index):
     accident = X_holdout.loc[index].values.reshape(1, -1)
