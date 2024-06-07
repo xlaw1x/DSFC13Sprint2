@@ -1,8 +1,5 @@
 import streamlit as st
 
-# def header(url):
-#      st.markdown(f'<p style="background-color:#F5F0E8;color:#1B1954;font-size:24px;border-radius:2%;">{url}</p>', unsafe_allow_html=True)
-
 # Set page configuration
 st.set_page_config(
     page_title="Your Page Title",
@@ -16,7 +13,7 @@ st.markdown(
     """
     <style>
     body {
-        background-color: ##30D5C8; /* Change this to your desired background color */
+        background-color: #30D5C8; /* Change this to your desired background color */
     }
     </style>
     """,
