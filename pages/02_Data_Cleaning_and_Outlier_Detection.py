@@ -21,7 +21,7 @@ def main():
 
     # Set Seaborn style and color palette
     sns.set_style("white")
-    sns.set_palette(["#7ABAFF", "#1D2371"])
+    sns.set_palette(["#1D2371"])
 
 
     # Plotting the distributions
@@ -89,9 +89,6 @@ if __name__ == '__main__':
     main()
 
 
-
-
-
 # ACCIDENTS PER YEAR AND MONTH OUTLIER PLOT
 def main():
     st.title('Distribution of Accidents per Year or per Month')
@@ -123,3 +120,83 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#YEAR OUTLIERS
+# Streamlit app for outlier detection for Longitude
+def main():
+    st.title('Outlier Detection for YEAR')
+    st.write('This app detects outliers in the acc_year column.')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['acc_year'])
+    df['acc_year_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['acc_year_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Outliers Detected in Year:')
+        st.write(outliers['acc_year'])
+    else:
+        st.write('No outliers detected in Year.')
+
+if __name__ == '__main__':
+    main()
+
+#MONTH OUTLIERS
+# Streamlit app for outlier detection for Longitude
+def main():
+    st.title('Outlier Detection for Month')
+    st.write('This app detects outliers in the Month column.')
+
+    # Outlier detection
+    z_scores = stats.zscore(df['acc_month'])
+    df['acc_month_zscore'] = abs(z_scores)
+
+    # Filter outliers
+    outliers = df[df['acc_month_zscore'] > 3]
+
+    # Display outliers
+    if not outliers.empty:
+        st.write('Outliers Detected in Month:')
+        st.write(outliers['acc_month'])
+    else:
+        st.write('No outliers detected in Month.')
+
+if __name__ == '__main__':
+    main()
+
+
+# ACCIDENTS PER DAY AND WEEKDAY OUTLIER PLOT
+def main():
+    st.title('Distribution of Accidents per Day or per Weekday')
+    st.write('This app visualizes the distribution of accidents in timeframe.')
+
+    # Extract numerical columns
+    numerical_cols = ['acc_day', 'acc_weekday']
+    self_accident_quant = df[numerical_cols]
+
+    # Set Seaborn style and color palette
+    sns.set_style("white")
+    sns.set_palette(["#1D2371"])
+
+
+    # Plotting the distributions
+    fig, ax = plt.subplots(1, 2, figsize=(16, 4))
+    fig.suptitle('Distribution', fontsize=16)
+
+    # Distribution of Latitude
+    sns.histplot(self_accident_quant["acc_day"], ax=ax[0], kde=True)
+    ax[0].set_title('Distribution of Accidents per Day of the Month')
+
+    # Distribution of Longitude
+    sns.histplot(self_accident_quant["acc_weekday"], ax=ax[1], kde=True)
+    ax[1].set_title('Distribution of Accidents per Weekday')
+
+    # Show the plot
+    st.pyplot(fig)
+
+if __name__ == '__main__':
+    main()
+
