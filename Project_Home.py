@@ -10,13 +10,13 @@ st.set_page_config(
 
 # Set background color
 st.markdown(
-    
+    """
     <style>
     body {
         background-color: #30D5C8; /* Change this to your desired background color */
     }
     </style>
-    ,
+    """,
     unsafe_allow_html=True,
 )
 
@@ -25,7 +25,7 @@ st.markdown(
     """
     <style>
     body, label, .css-vfskoc, .st-ab, .st-ag {
-        color: #333333; /* Change this to your desired text color */
+        color: #0000FF; /* Change this to your desired text color */
     }
     </style>
     """,
