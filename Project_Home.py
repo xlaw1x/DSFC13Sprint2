@@ -7,6 +7,8 @@ st.title ('Introduction')
 st.subheader('Intro description', divider='blue')
 
 st.header('Case Study', divider='blue')
+st.write('Sustainable Development Goal 3:')
+st.write('Sustainable Development Goal 11:')
 st.header('Scope', divider='blue')
 st.header('Objectives', divider='blue')
 st.header('Methodology', divider='blue')
