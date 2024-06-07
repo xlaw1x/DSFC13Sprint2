@@ -2,7 +2,6 @@
 #python
 streamlit
 numpy
-pickle
 pandas
 #tqdm
 # from collections import Counter
