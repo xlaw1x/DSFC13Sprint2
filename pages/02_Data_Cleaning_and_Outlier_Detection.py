@@ -5,9 +5,11 @@ import numpy as np
 import seaborn as sns
 import scipy.stats as stats
 
-st.title("Data Cleaning and Preprocessing")
-st.write("Here you can put each of your key results.")
+st.title("Data Retrieval, Cleaning, and Preprocessing")
+st.write("The dataset used in this project was obtained from the Kaggle website found at: https://www.kaggle.com/datasets/esparko/mmda-traffic-incident-data.")
+st.write("This data from Kaggle was webscraped from the Metropolitan Manila Development Authority's (MMDA) official Twitter.") 
 
+         
 df = pd.read_csv('data/involved_data_final.csv')
 
 st.title("Outlier Detection and Treatment")
