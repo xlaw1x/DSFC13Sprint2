@@ -26,8 +26,8 @@ st.write('---')
 
 import pickle
 
-# # Load the model
-# with open('baseline_model.pkl', 'rb') as f:
+# Load the model
+with open('baseline_model.pkl', 'rb') as f:
 #     model = pickle.load(f)
 
 # # Load the model
