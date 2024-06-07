@@ -8,10 +8,7 @@ import seaborn as sns
 # import nltk
 
 st.title("Exploratory Data Analysis")
-
-
 st.subheader("In this section we will explore the")
-
 
 df = pd.read_csv('data/involved_data_final.csv')
 # st.dataframe(df)
@@ -112,7 +109,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Top Accident Locations')
+    st.header('Top Accident Locations')
     st.write('This app visualizes the top locations where accidents occur.')
 
     # Plot the bar chart
@@ -146,7 +143,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents by Direction')
+    st.header('Accidents by Direction')
     st.write('This app visualizes the number of accidents by direction.')
 
     # Plot the bar chart
@@ -179,7 +176,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents by Time of Day')
+    st.header('Accidents by Time of Day')
     st.write('This app visualizes the number of accidents by time of day.')
 
     # Plot the bar chart
@@ -211,7 +208,7 @@ def plot_line_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents by Hour of the Day')
+    st.header('Accidents by Hour of the Day')
     st.write('This app visualizes the number of accidents by hour of the day.')
 
     # Plot the line chart
@@ -248,7 +245,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents by Day of the Week')
+    st.header('Accidents by Day of the Week')
     st.write('This app visualizes the number of accidents by day of the week.')
 
     # Plot the bar chart
@@ -281,7 +278,7 @@ def plot_bar_chart(df):
 
 # Streamlit app
 def main():
-    st.title('Accidents by Month')
+    st.header('Accidents by Month')
     st.write('This app visualizes the number of accidents by month.')
 
     # Plot the bar chart
@@ -301,7 +298,7 @@ colors = ['#1D2371', '#7ABAFF', '#4D4DFF']  # Shades of blue
 
 # Streamlit app
 def main():
-    st.title('Accidents by Month for Different Years')
+    st.header('Accidents by Month for Different Years')
     st.write('This app visualizes the number of accidents by month for different years.')
 
     # Plotting the data
@@ -326,3 +323,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+st.title('All Road Accidents vs Self-accidents')
+st.write('Now take a look at a side-by-side comparison of all road accidents to self-accidents.')
