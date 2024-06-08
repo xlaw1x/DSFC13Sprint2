@@ -7,4 +7,4 @@ st.title("Would you like to try predicting a self-accident?")
 st.image("images/ml_app.png", caption="Image Caption", use_column_width=True)
 
 # Display the local image as a clickable link button
-st.markdown("[![Self-accident Detection ML App](images/ml_app.png)](https://social-gifts-sink.loca.lt/)")
+st.markdown("[![Self-accident Detection ML App](st.image("images/ml_app.png")](https://social-gifts-sink.loca.lt/)")
