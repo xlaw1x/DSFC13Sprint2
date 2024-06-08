@@ -3,6 +3,7 @@
 streamlit
 numpy
 pandas
+flask
 #tqdm
 # from collections import Counter
 # warnings.filterwarnings("ignore") #if you don't want to show the warnings
