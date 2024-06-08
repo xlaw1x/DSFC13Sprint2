@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 st.write('When accounting for all accidents, we can see that Quezon City tops as the city with the most recorded accidents, followed by Mandaluyong and Makati City.')
 st.image("images/distribution_of_vehicles.png")
-st.write('However, When we filter this to self-accidents however, we can see that Quezon City still tops the list, but this time followed by Makati and Pasig City. I wonder which roads do these accidents occur most often?')
+st.write('However, when we filter this to self-accidents however, we can see that Quezon City still tops the list, but this time followed by Makati and Pasig City. I wonder which roads do these accidents occur most often?')
 st.write('---')
          
 # TOP LOCATIONS WHERE ACCIDENTS OCCUR
@@ -118,8 +118,10 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write('As indicated in the above graph, road accidents are most likely to occur in EDSA, specifically Shaw, Guadalupe, and Megamall.')
-
+st.write('When it comes to identifying more specific road areas, we can observe that EDSA is a hotspot for accidents, specifically Shaw, Guadalupe, and Megamall.')
+st.image("images/top_cities.png")
+st.write('But when we check the road areas where self-accidents occur, we can see that most self-accidents actually occur along C5 Road.')
+st.write('---')
 
 # ACCIDENTS PER DIRECTION
 # Function to plot bar chart
@@ -323,5 +325,5 @@ st.title('All Road Accidents vs Self-accidents')
 st.write('Now take a look at a side-by-side comparison of all road accidents to self-accidents.')
 
 
-st.image("images/top_cities.png")
+
 st.image("images/distribution_of_vehicles.png")
