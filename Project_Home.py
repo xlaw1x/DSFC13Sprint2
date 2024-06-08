@@ -3,6 +3,8 @@ import streamlit as st
 st.image('images/title.png')
 st.caption('Group 1 Exp1orers - Francesca Panga | Jacob Fuentebella | Jersy Carino | Leonard Inciso | Lester Covarrubias II')
 
+st.title ('Introduction')
+
 # Display justified text using HTML/CSS within markdown
 st.markdown(
     """
@@ -12,8 +14,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.title ('Introduction')
-st.write("""""")
 
 st.image('images/mmda_geopandas.png')
 st.write('---')
