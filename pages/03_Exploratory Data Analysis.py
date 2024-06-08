@@ -297,7 +297,6 @@ colors = ['#1D2371', '#7ABAFF', '#4D4DFF']  # Shades of blue
 # Streamlit app
 def main():
     st.header('Accidents by Month for Different Years')
-    st.write('This app visualizes the number of accidents by month for different years.')
 
     # Plotting the data
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -322,11 +321,9 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.title('All Road Accidents vs Self-accidents')
-st.write('Now take a look at a side-by-side comparison of all road accidents to self-accidents.')
+st.write('Notice how from July to October 2018, there is a steady increase in number of accidents (note that Jan-Jun 2018 are not covered in this data). The year 2019 is a little more steady with a slight spike in March, then continues to decrease all the way into 2020, with a sharp downward decrease beginning Febuary, the same time the Philippines started lockdown due to COVID-19, which decreased vehicle volume on the road during the pandemic, and thus a decrease in vehicular accidents as well.')
 
-
-
+st.header('Distribution of Vehicles in Non-self-accidents vs Self-accidents')
 st.image("images/distribution_of_vehicles.png")
 st.write('Lastly we have a very important visualization to illustrate which types of vehicles are mostly involved in self-accidents. An interesting point to note here is that while cars dominate the total number of accidents, motorcycles top the list when it comes to self-accidents– indicating the possible need to implement more road precautions and restrictions specifically for motorcycles.')
 st.write('---')
