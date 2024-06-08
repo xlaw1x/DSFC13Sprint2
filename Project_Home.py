@@ -35,7 +35,7 @@ st.markdown(
 st.markdown(
     """
     <div style="text-align: justify">
-        The map below categorizes as gray points all vehicular accidents, while red points illustrate self-accidents (plotted such that areas with denser self-eccident occurences show as larger points).
+        The map below categorizes all vehicular accidents as gray points, while red points show where self-accidents occur (plotted such that areas with denser self-accident occurences show as larger points).
     </div>
     """,
     unsafe_allow_html=True
@@ -46,10 +46,19 @@ st.write('---')
 
 
 st.header('Objectives', divider='blue')
+st.subheader('Our objectives are:')
 st.image('images/objectives.png')
-st.write('Our objectives are:')
 st.write('---')
 
 st.header('Methodology', divider='blue')
 st.image('images/methodology.png')
-st.write('---')
+st.write('
+         
+st.markdown(
+    """
+    <div style="text-align: justify">
+        For our methodology, we began by understanding our problem, followed by thorough data cleaning and preprocessing. Before conducting exploratory data analysis, we first identified outliers but ultimately decided to keep them. After preparing our final dataset, we initiated the modeling process. This involved creating a baseline model and iterating through various combinations of hypertuning and resampling. We then interpreted the results using SHAP force plots, beeswarm plots, and LIME prediction probability. Finally, based on the insights gathered, we came up with our recommendations and initialized our deployment through Streamlit.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
