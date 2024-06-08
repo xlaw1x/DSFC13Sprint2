@@ -7,14 +7,20 @@ import scipy.stats as stats
 
 st.title("Data Retrieval, Cleaning, and Preprocessing")
 st.write("The dataset used in this project was obtained from the Kaggle website found at: https://www.kaggle.com/datasets/esparko/mmda-traffic-incident-data.")
-st.write("This data from Kaggle was webscraped from the Metropolitan Manila Development Authority's (MMDA) official Twitter.") 
+st.write("This Kaggle data was originally webscraped from the Metropolitan Manila Development Authority's (MMDA) official Twitter.") 
 
 st.write("The initial dataset has 17,312 rows and 13 columns as shown below.")
 st.image('images/dfinfo1.png', width = 500)
 st.write("Despite the data already being partially preprocessed, the group had to further clean it through the following methods:")
-st.write("1. Drop null values in the 'Type' column.")
-st.write("2. ")
-st.write("")
+st.write("1. Drop rows with null values in the 'Type' column - it is important to drop these since this is our target variable, or the column that indicates whether or not a datapoint is a self-accident or not.")
+st.write("2. Drop rows with (0,0) values for Latitude and Longitude - while none of the rows in the 'Latitude' or 'Longitude' columns were indicated to have null values, some contained (0,0) coordinates, which are clearly mislabelled since these coordinates are not in the Philippines.")
+st.write("3. Drop columns 'High Accuracy' and 'Source' - high accuracy refers to quality of the coordinates while all datapoints were sourced from Twitter, these are irrlevant to our study.")
+st.write("4. Create a new column 'is_self_accident' - our target variable.")
+st.write("5. Extract more features from date/time - date, year, month, day of the month, and day of the week.")
+st.write("6. Clean the 'Direction' column.")
+st.write("7. Impute 'Lanes_Blocked' column.")
+st.write("8. Clean 'City' and 'Location' columns.")
+st.write("2. Feature engineer the 'Involved' column - create new columns indicating what types of vehicles were involved and how many.")
 
          
 df = pd.read_csv('data/involved_data_final.csv')
