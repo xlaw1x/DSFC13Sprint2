@@ -7,8 +7,18 @@ import pandas as pd
 from flask import Flask
 import streamlit as st
 
-# read model and holdout data
-model = pickle.load(open('baseline_model.pkl', 'rb'))
+import os
+
+# Get the absolute path to the directory containing the script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the absolute file path to the pickle file
+file_path = os.path.join(script_dir, 'data', 'baseline_model.pkl')
+
+# Load the model from the pickle file
+with open(file_path, 'rb') as f:
+    model = pickle.load(f)
+
 X_holdout = pd.read_csv('holdout.csv', index_col=0)
 holdout_accidents = X_holdout.index.to_list()
 
