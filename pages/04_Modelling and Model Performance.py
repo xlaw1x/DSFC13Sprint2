@@ -33,7 +33,9 @@ st.caption("Visual Comparison of Undersampling Methods")
 st.write("Upon applying different undersampling techniques, accuracy and precision scores did not see significant improvements. However, TomekLinks stood out with the highest precision scores among the undersampling methods, even surpassing the results achieved with previous oversampling techniques.")
 st.write("---")
 
+st.header("Effect of Resampling and Hyperparameter Tuning on Precision Scores")
 st.image('images/final_comparison.png')
-st.caption("Comparison of All Models")
+st.caption("Comparison of Best Models")
+st.write("After implementing TomekLinks as the resampling method and conducting GridSearchCV, variations in precision scores were observed across different model configurations. The baseline model, without resampling or hyperparameter tuning, exhibited the highest precision, with scores of 84.47% for training and 76.12% for validation, along with a holdout precision of 80.85%. Introducing hyperparameter tuning without resampling resulted in a decline in precision, particularly in training, where it dropped to 61.23%, while validation precision remained steady at 76.12%, maintaining a holdout precision of 80.85%. Models employing TomekLinks resampling, whether with or without hyperparameter tuning, maintained relatively high precision, with scores ranging from 74.52% to 83.76% for validation, showcasing the efficacy of this resampling technique in preserving precision. Despite minor fluctuations, the baseline model consistently demonstrated the highest precision across different datasets, suggesting its suitability for deployment.")
 
 
