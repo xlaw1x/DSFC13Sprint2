@@ -30,13 +30,11 @@ import pickle
 import pandas as pd
 
 # model deployment
-from flask import Flask
 import streamlit as st
 
 # read model and holdout data
-model = pickle.load(open('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/baseline_model.pkl', 'rb'))
-X_holdout = pd.read_csv('/content/drive/MyDrive/eskwelabs_workspace/Sprint2_Group1/holdout.csv', index_col=0)
-holdout_accidents = X_holdout.index.to_list()
+model = pickle.load(open('/baseline_model.pkl', 'rb'))
+holdout_df = pd.read_csv('/holdout.csv', index_col=0)
 
 st.title("Self-accident Detection")
 html_temp = """
@@ -44,23 +42,33 @@ html_temp = """
 <h2 style="color:white;text-align:center;"> Self-accident Detection ML App </h2>
 </div>
 """
-st.markdown(html_temp, unsafe_allow_html = True)
+st.markdown(html_temp, unsafe_allow_html=True)
 
-#adding a selectbox
-choice = st.selectbox(
-    "Select Accident Number:",
-    options = holdout_accidents)
+# Adding a selectbox for choosing index
+selected_index = st.selectbox("Select Index:", options=holdout_df.index)
 
+# Display selected columns for the chosen index
+st.write("Selected row:")
+st.write("Latitude:", holdout_df.at[selected_index, 'Latitude'])
+st.write("Longitude:", holdout_df.at[selected_index, 'Longitude'])
+st.write("Motorcycle Involved:", holdout_df.at[selected_index, 'Involved_motorcycle'])
+st.write("Involved_bus:", holdout_df.at[selected_index, 'Involved_bus'])
+st.write("Involved_car:", holdout_df.at[selected_index, 'Involved_car'])
+st.write("Involved_van:", holdout_df.at[selected_index, 'Involved_van'])
+st.write("Involved_truck:", holdout_df.at[selected_index, 'Involved_truck'])
 
 def predict_is_self_accident(index):
-    accident = X_holdout.loc[index].values.reshape(1, -1)
-    prediction_num = model.predict(accident)[0]
+    # Select all columns for prediction
+    row = holdout_df.loc[index]
+    # Convert row data to array for prediction
+    row_array = row.values.reshape(1, -1)
+    prediction_num = model.predict(row_array)[0]
     pred_map = {1: 'is_self_accident', 0: 'is_not_self_accident'}
     prediction = pred_map[prediction_num]
     return prediction
 
 if st.button("Predict"):
-    output = predict_is_self_accident(choice)
+    output = predict_is_self_accident(selected_index)
 
     if output == 'is_self_accident':
         st.error('This accident may be a self-accident', icon="🚨")
