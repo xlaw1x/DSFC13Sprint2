@@ -26,7 +26,7 @@ st.write("2. Feature engineer the 'Involved' column - create new columns indicat
 df = pd.read_csv('data/involved_data_final.csv')
 
 st.title("Outlier Detection and Treatment")
-st.write("Here you can put each of your key results.")
+st.write("Outliers were determined by computing the z-scores of each numerical column and labelled as outliers if their z-score was greater than 3. Outliers were found in 4 columns: 'Latitude', 'Longitude', 'Laned_Blocked' and 'Sum' (number of vehicles involved in each instance). However, upon further investigation, these data points were confirmed valid and were retained.")
 
 # LATITUDE AND LONGITUDE OUTLIER PLOT
 def main():
