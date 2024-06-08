@@ -52,7 +52,6 @@ st.write('---')
 
 st.header('Methodology', divider='blue')
 st.image('images/methodology.png')
-st.write('
          
 st.markdown(
     """
