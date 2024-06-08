@@ -216,7 +216,7 @@ def main():
 if __name__ == '__main__':
     main()
     
-st.write('This time-series plot shows the spike in accidents between 5 and 10 am, which is commonly known as rush hour in the Philippines. Vehicles rushing to work are likely to speed or have less focus or patience on the road, resulting in accidents.')
+st.write('This time-series plot shows the spike in accidents between 6am and 9am, which appears to be the rush hour for people heading to work or school. Vehicles rushing to work are likely to speed or have less focus or patience on the road, resulting in accidents.')
 
 # ACCIDENTS PER DAY OF THE WEEK
 # Maps integer value to string value of trans_weekday
@@ -277,7 +277,6 @@ def plot_bar_chart(df):
 # Streamlit app
 def main():
     st.header('Accidents by Month')
-    st.write('This app visualizes the number of accidents by month.')
 
     # Plot the bar chart
     plot_bar_chart(df)
@@ -285,6 +284,8 @@ def main():
 if __name__ == '__main__':
     main()
 
+st.write('This bar chart illustrates September to November as the months with the highest incident rates. This may be due to increased vehicle density on the road leading up to the holiday season, or because this also happens to be rainy season in the Philippines.')
+st.write('---')
 
 # ACCIDENTS PER YEAR
 # Calculate accidents per month per year
@@ -327,3 +328,5 @@ st.write('Now take a look at a side-by-side comparison of all road accidents to 
 
 
 st.image("images/distribution_of_vehicles.png")
+st.write('Lastly we have a very important visualization to illustrate which types of vehicles are mostly involved in self-accidents. An interesting point to note here is that while cars dominate the total number of accidents, motorcycles top the list when it comes to self-accidents– indicating the possible need to implement more road precautions and restrictions specifically for motorcycles.')
+st.write('---')
