@@ -16,4 +16,4 @@ import streamlit as st
 #st.image("path_to_local_image.png", caption="Image Caption", use_column_width=True)
 
 # Display the local image as a clickable link button
-st.markdown("[![Button Text](st.image("path_to_local_image.png"))](https://social-gifts-sink.loca.lt/)")
+st.markdown("[![Button Text](st.image("images/ml_app.png"))](https://social-gifts-sink.loca.lt/)")
