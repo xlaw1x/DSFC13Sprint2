@@ -81,9 +81,11 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write('The graph above shows the top 3 cities in Metro Manila where these accidents occur are Quezon City, Mandaluyong, and Makati City. Which roads do these accidents occur most often?')
-
-
+st.write('When accounting for all accidents, we can see that Quezon City tops as the city with the most recorded accidents, followed by Mandaluyong and Makati City.')
+st.image("images/distribution_of_vehicles.png")
+st.write('However, When we filter this to self-accidents however, we can see that Quezon City still tops the list, but this time followed by Makati and Pasig City. I wonder which roads do these accidents occur most often?')
+st.write('---')
+         
 # TOP LOCATIONS WHERE ACCIDENTS OCCUR
 # Function to plot bar chart
 def plot_bar_chart(df):
@@ -320,6 +322,6 @@ if __name__ == '__main__':
 st.title('All Road Accidents vs Self-accidents')
 st.write('Now take a look at a side-by-side comparison of all road accidents to self-accidents.')
 
-st.image("images/distribution_of_vehicles.png")
+
 st.image("images/top_cities.png")
 st.image("images/distribution_of_vehicles.png")
