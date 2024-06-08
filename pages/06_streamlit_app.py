@@ -8,8 +8,8 @@ from flask import Flask
 import streamlit as st
 
 # read model and holdout data
-model = pickle.load(open('data/baseline_model.pkl', 'rb'))
-X_holdout = pd.read_csv('data/holdout.csv', index_col=0)
+model = pickle.load(open('pages/baseline_model.pkl', 'rb'))
+X_holdout = pd.read_csv('pages/holdout.csv', index_col=0)
 holdout_accidents = X_holdout.index.to_list()
 
 st.title("Self-accident Detection")
