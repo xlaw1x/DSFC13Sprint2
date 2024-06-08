@@ -20,7 +20,9 @@ st.header('Scope', divider='blue')
 st.markdown(
     """
     <div style="text-align: justify">
-        Our research focuses on road accidents from 2018 to 2020 within Metro Manila given its significant number of vehicular accidents. We aim to create a binary classification Machine Learning model that determines if a specific accident is a self-accident or not a self-accident. Self-accidents are single-vehicle accidents typically caused by road hazards (potholes, uneven road surface, misaligned barriers, poorly maintained infrastructure), speeding, distracted/reckless driving, or poor weather conditions. These are often underreported due to its nature being a minor incident. We want to detect these accidents to provide local government units (LGUs) with actionable insights to improve road safety. The goal is to find the model that optimizes precision score, as it is our aim to detect the most true positives as possible.\n\n
+        Our research focuses on road accidents from 2018 to 2020 within Metro Manila given its significant number of vehicular accidents. We aim to create a binary classification Machine Learning model that determines if a specific accident is a self-accident or not a self-accident. Self-accidents are single-vehicle accidents typically caused by road hazards (potholes, uneven road surface, misaligned barriers, poorly maintained infrastructure), speeding, distracted/reckless driving, or poor weather conditions. These are often underreported due to its nature being a minor incident. We want to detect these accidents to provide local government units (LGUs) with actionable insights to improve road safety. The goal is to find the model that optimizes precision score, as it is our aim to detect the most true positives as possible.
+
+        
     </div>
     """,
     unsafe_allow_html=True
