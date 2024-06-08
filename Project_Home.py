@@ -28,13 +28,16 @@ st.write('---')
 # general libraries
 import pickle
 import pandas as pd
+import os  # Import os module to handle file paths
 
 # model deployment
 import streamlit as st
 
 # read model and holdout data
-model = pickle.load(open('/baseline_model.pkl', 'rb'))
-holdout_df = pd.read_csv('/holdout.csv', index_col=0)
+model_path = os.path.join(os.getcwd(), 'baseline_model.pkl')  # Adjust the path as needed
+model = pickle.load(open(model_path, 'rb'))
+
+holdout_df = pd.read_csv('holdout.csv', index_col=0)  # Assuming holdout.csv is in the same directory as the Streamlit script
 
 st.title("Self-accident Detection")
 html_temp = """
