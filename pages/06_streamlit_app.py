@@ -10,7 +10,7 @@ import streamlit as st
 import os
 
 try:
-    with open(file_path, 'rb') as f:
+    with open(data/baseline_model.pkl, 'rb') as f:
         # Read from the file
 except FileNotFoundError:
     print("File not found:", file_path)
