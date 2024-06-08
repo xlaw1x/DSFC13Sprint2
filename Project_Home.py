@@ -29,7 +29,7 @@ st.markdown(
 st.markdown(
     """
     <div style="text-align: justify">
-        The map below categorizes as gray points all vehicular accidents, while red points illustrate self-accidents (plotted such that areas with denser self-eccident occurences show as larger points).
+        \nThe map below categorizes as gray points all vehicular accidents, while red points illustrate self-accidents (plotted such that areas with denser self-eccident occurences show as larger points).
     </div>
     """,
     unsafe_allow_html=True
