@@ -14,20 +14,24 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.image('images/mmda_geopandas.png')
-st.write('---')
-
-st.header('Case Study', divider='blue')
-st.write('Sustainable Development Goal 3:')
-st.write('Sustainable Development Goal 11:')
 st.write('---')
 
 st.header('Scope', divider='blue')
+st.markdown(
+    """
+    <div style="text-align: justify">
+        Our research focuses on road accidents from 2018 to 2020 within Metro Manila given its significant number of vehicular accidents. We aim to create a binary classification Machine Learning model that determines if a specific accident is a self-accident or not a self-accident. Self-accidents are single-vehicle accidents typically caused by road hazards (potholes, uneven road surface, misaligned barriers, poorly maintained infrastructure), speeding, distracted/reckless driving, or poor weather conditions. These are often underreported due to its nature being a minor incident. We want to detect these accidents to provide local government units (LGUs) with actionable insights to improve road safety.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.image('images/mmda_geopandas.png')
 st.write('---')
+
 
 st.header('Objectives', divider='blue')
 st.image('images/objectives.png')
+st.write('Our objectives are:')
 st.write('---')
 
 st.header('Methodology', divider='blue')
