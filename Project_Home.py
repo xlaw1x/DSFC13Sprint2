@@ -26,7 +26,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write('The map below categorizes as gray points all vehicular accidents, while red points illustrate self-accidents (plotted such that areas with denser self-eccident occurences show as larger points).')
+st.markdown(
+    """
+    <div style="text-align: justify">
+        The map below categorizes as gray points all vehicular accidents, while red points illustrate self-accidents (plotted such that areas with denser self-eccident occurences show as larger points).
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write(').')
 st.image('images/mmda_geopandas.png')
 st.write('---')
 
